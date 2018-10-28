@@ -19,7 +19,3 @@ RUN sdkmanager "extras;m2repository;com;android;support;constraint;constraint-la
 RUN sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
 RUN sdkmanager "extras;google;m2repository"
 RUN sdkmanager --licenses
-
-# Generate a debug keystore to avoid it being generated on each `docker run`
-RUN mkdir ~/.android
-RUN keytool -genkeypair -alias androiddebugkey -keypass android -keystore ~/.android/debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -validity 365
